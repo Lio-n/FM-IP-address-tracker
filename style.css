@@ -1,0 +1,99 @@
+:root {
+  --Very-Dark-Gray: hsl(0, 0%, 17%);
+  --Dark-Gray: hsl(0, 0%, 59%);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.bodySize {
+  font-size: 18px;
+  color: var(--Very-Dark-Gray);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.main {
+  background-image: url("./images/pattern-bg.png");
+  background-repeat: no-repeat;
+  font-family: "Rubik", sans-serif;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.title {
+  color: #fff;
+  font-weight: 500;
+}
+
+.form {
+  padding: 2rem;
+  display: flex;
+  margin: 0 auto;
+  max-width: 35rem;
+}
+
+.form__input {
+  height: 3rem;
+  width: 100%;
+  border: none;
+  border-radius: 15px 0 0 15px;
+  padding: 0 1.5rem;
+  font-size: 1rem;
+}
+.form__btn {
+  border: none;
+  border-radius: 0 15px 15px 0;
+  height: 3rem;
+  padding: 0 5px;
+  color: #fff;
+  width: 3.5rem;
+  background-color: #000;
+  font-weight: 700;
+  font-size: 1.2rem;
+  font-family: "Rubik", sans-serif;
+}
+.form__btn:hover {
+  background-color: var(--Dark-Gray);
+}
+.cont-card {
+  display: flex;
+  padding: 0 5rem;
+  justify-content: center;
+}
+.card {
+  position: absolute;
+  list-style-type: none;
+  z-index: 1;
+  padding: 2rem;
+  border-radius: 15px;
+  background-color: #fff;
+}
+.location,
+.isp {
+  max-width: 15rem;
+}
+
+.card p {
+  color: var(--Dark-Gray);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+@media (min-width: 800px) {
+  .card {
+    display: flex;
+    gap: 4rem;
+    text-align: left;
+    justify-content: space-between;
+  }
+}
+
+#map {
+  position: relative;
+  z-index: 0;
+  margin-top: 4.5rem;
+  min-height: 90vh;
+}

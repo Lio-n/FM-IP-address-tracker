@@ -48,28 +48,29 @@
   border-radius: 0 15px 15px 0;
   height: 3rem;
   padding: 0 5px;
-  color: #fff;
   width: 3.5rem;
   background-color: #000;
-  font-weight: 700;
-  font-size: 1.2rem;
-  font-family: "Rubik", sans-serif;
 }
 .form__btn:hover {
   background-color: var(--Dark-Gray);
 }
+
 .cont-card {
   display: flex;
   padding: 0 5rem;
   justify-content: center;
-}
-.card {
   position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.card {
   list-style-type: none;
   z-index: 1;
   padding: 2rem;
   border-radius: 15px;
   background-color: #fff;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 .location,
 .isp {
@@ -82,12 +83,22 @@
   font-weight: 500;
 }
 
+.separator {
+  display: none;
+}
 @media (min-width: 800px) {
   .card {
     display: flex;
-    gap: 4rem;
+    gap: 2rem;
     text-align: left;
     justify-content: space-between;
+    align-items: center;
+  }
+  .separator {
+    display: block;
+    height: 80%;
+    width: 1px;
+    background-color: var(--Dark-Gray);
   }
 }
 

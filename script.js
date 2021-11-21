@@ -30,32 +30,31 @@ const getApiData = (input) => {
 };
 
 const addElementsDom = (inputApi) => {
-  const ipAddress = document.querySelector(".ipAddress__para");
-  const location = document.querySelector(".location__para");
-  const timezone = document.querySelector(".timezone__para");
-  const isp = document.querySelector(".isp__para");
+  const ipAddressEl = document.querySelector(".ipAddress__para");
+  const locationEl = document.querySelector(".location__para");
+  const timezoneEl = document.querySelector(".timezone__para");
+  const ispEl = document.querySelector(".isp__para");
 
-  ipAddress.textContent = inputApi.ip;
-  location.textContent =
-    inputApi.city +
-    ", " +
-    inputApi.region +
-    (inputApi.postalCode ? ", " + inputApi.postalCode : "");
-  console.log(inputApi.postalCode);
-  timezone.textContent = "UTC " + inputApi.timezone;
-  isp.textContent = inputApi.isp;
+  const { ip, city, region, postalCode, timezone, isp, lat, lng } = inputApi;
 
-  myMap.flyTo([inputApi.lat, inputApi.lng], 15);
-  L.marker([inputApi.lat, inputApi.lng]).addTo(myMap);
+  ipAddressEl.textContent = ip;
+  locationEl.textContent = `${city}, ${region}${
+    postalCode ? ", " + postalCode : ""
+  }`;
+  timezoneEl.textContent = "UTC " + timezone;
+  ispEl.textContent = isp;
+
+  myMap.flyTo([lat, lng], 15);
+  L.marker([lat, lng]).addTo(myMap);
 };
 
 (function main() {
-  const form = document.querySelector(".form");
-  const input = form.querySelector(".form__input");
+  const formEl = document.querySelector(".form");
+  const inputEl = formEl.querySelector(".form__input");
 
-  form.addEventListener("submit", (e) => {
+  formEl.addEventListener("submit", (e) => {
     e.preventDefault();
-    getApiData(input.value);
-    input.value = "";
+    getApiData(inputEl.value);
+    inputEl.value = "";
   });
 })();
